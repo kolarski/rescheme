@@ -17,31 +17,26 @@ $ npm install rescheme
 ```js
 var rescheme = require('rescheme');
 
+var rescheme = require('./index');
+
 var original = {
-	_id: "54bd0a80e95d9263e0386d70",
-	title: "Autocar service",
-	city: "Sofia",
-	neighbourhood: "Some neighbourhood",
-	adress: "st. Marinov 18",
-	details: {
-		telephone: "+359 777 777",
-		web_addr: "http://google.com",
-		more_details: {
-			full_desc: "Additional information goes here"
+	a: 1,
+	details1: {
+		c: 2,
+		d: 3,
+		details2: {
+			f: 4
 		}
 	}
 };
 
-var new_schema = {
-	name: "title",
-	city: "city",
-	address: "adress",
-	phone: "telephone",
-	web: "web_addr",
-	phone: "details.telephone",
-	web: "details.web_addr",
-	desc: "details.more_details.full_desc"
+var new_scheme = {
+	name: "a",
+	city: "details1.c",
+	address: "details1.d",
+	phone: "details1.details2.f"
 }
+
 var options = {
 	addMissingKeys: false
 };
@@ -51,12 +46,12 @@ var reschemedJSON = rescheme(original, new_schema, options);
 
 ### The result of above operation will be:
 ```js
-{ name: 'Autocar service',
-  city: 'Sofia',
-  address: 'st. Marinov 18',
-  phone: '+359 777 777',
-  web: 'http://google.com',
-  desc: 'Additional information goes here' }
+{
+	name: 1,
+	city: 2,
+	address: 3,
+	phone: 4
+}
 ```
 __Options__
 
