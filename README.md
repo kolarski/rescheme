@@ -17,8 +17,6 @@ $ npm install rescheme
 ```js
 var rescheme = require('rescheme');
 
-var rescheme = require('./index');
-
 var original = {
 	a: 1,
 	details1: {
@@ -56,6 +54,9 @@ var reschemedJSON = rescheme(original, new_schema, options);
 __Options__
 
 * `addMissingKeys` - true/false (default: false) - With this parameter all keys not defined in the new schema will be copied over from the original JSON. Not implemented.
+
+## Note
+This is still in beta. Currently works only with flat schema format as shown in example. I'm working on arrays and recursive schema formats. Any ideas and contributions will be greatly appreciated.
 
 ## Author
 Alex Kolarski (aleks.rk@gmail.com)
