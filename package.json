@@ -1,11 +1,11 @@
 {
   "name": "rescheme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "rescheme",
   "main": "index.js",
   "scripts": {
     "test": "make test-all",
-    "blanket": { 
+    "blanket": {
       "pattern": "//^((?!(node_modules|test)).)*$/",
       "data-cover-flags": {
         "debug": false
@@ -15,9 +15,7 @@
       "threshold": 90
     }
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "should": "*",
     "blanket": "*",
