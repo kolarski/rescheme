@@ -12,7 +12,7 @@ JSON Rescheme project will help you change the JSON structure easily using decla
 $ npm install rescheme
 ```
 
-## Usage
+## Usage 1
 
 ```js
 var rescheme = require('rescheme');
@@ -51,6 +51,32 @@ var reschemedJSON = rescheme(original, new_schema, options);
 	phone: 4
 }
 ```
+
+## Usage 2 (Working with arrays of objects)
+
+```js
+var original2 = [
+	{
+		a: 1,
+		b: 2,
+		c: { d: 3 }
+	}
+];
+
+var new_scheme2 = {
+	name: "a",
+	city: "b",
+	address: "c.d"
+};
+
+var reschemedJSON2 = rescheme(original2, new_scheme2);
+```
+
+### The result of above operation will be:
+```js
+[ { name: 1, city: 2, address: 3 } ]
+```
+
 __Options__
 
 * `addMissingKeys` - true/false (default: false) - With this parameter all keys not defined in the new schema will be copied over from the original JSON. Not implemented.
