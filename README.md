@@ -57,9 +57,10 @@ var reschemedJSON = rescheme(original, new_schema, options);
 ```js
 var original2 = [
 	{
-		a: 1,
-		b: 2,
-		c: { d: 3 }
+		a: 1, b: 2, c: { d: 3 }, g: 4
+	},
+	{
+		a: 5, b: 6, c: { d: 7, f: 8 }, d: { p: 9}
 	}
 ];
 
@@ -74,7 +75,8 @@ var reschemedJSON2 = rescheme(original2, new_scheme2);
 
 ### The result of above operation will be:
 ```js
-[ { name: 1, city: 2, address: 3 } ]
+[ { name: 1, city: 2, address: 3 },
+  { name: 5, city: 6, address: 7 } ]
 ```
 
 __Options__

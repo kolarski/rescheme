@@ -22,9 +22,10 @@ console.log(reschemedJSON);
 
 var original2 = [
 	{
-		a: 1,
-		b: 2,
-		c: { d: 3 }
+		a: 1, b: 2, c: { d: 3 }, g: 4
+	},
+	{
+		a: 5, b: 6, c: { d: 7, f: 8 }, d: { p: 9}
 	}
 ];
 
