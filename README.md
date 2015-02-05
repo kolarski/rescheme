@@ -93,7 +93,7 @@ var reschemedJSON2 = rescheme(original2, new_scheme2);
 ```
 
 ## Usage 3
-### (Tranformation of arrays of objects with recursive scheme)
+### (Tranformation of arrays of objects with nasted scheme)
 
 ```js
 var original3 = [
