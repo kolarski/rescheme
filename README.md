@@ -12,7 +12,8 @@ JSON Rescheme project will help you change the JSON structure easily using decla
 $ npm install rescheme
 ```
 
-## Usage 1 (Simple object transormation with flat schema)
+## Usage 1
+### (Simple object transormation with flat schema)
 
 ```js
 var rescheme = require('rescheme');
@@ -53,7 +54,8 @@ var reschemedJSON = rescheme(original, new_schema, options);
 }
 ```
 
-## Usage 2 (Tranformation of arrays of objects)
+## Usage 2
+### (Tranformation of arrays of objects)
 
 ```js
 var original2 = [
@@ -90,7 +92,8 @@ var reschemedJSON2 = rescheme(original2, new_scheme2);
 ]
 ```
 
-## Usage 3 (Tranformation of arrays of objects with recursive scheme)
+## Usage 3
+### (Tranformation of arrays of objects with recursive scheme)
 
 ```js
 var original3 = [
