@@ -12,7 +12,7 @@ JSON Rescheme project will help you change the JSON structure easily using decla
 $ npm install rescheme
 ```
 
-## Usage 1
+## Example 1
 ### (Simple object transormation with flat schema)
 
 ```js
@@ -54,7 +54,7 @@ var reschemedJSON = rescheme(original, new_schema, options);
 }
 ```
 
-## Usage 2
+## Example 2
 ### (Tranformation of arrays of objects)
 
 ```js
@@ -92,7 +92,7 @@ var reschemedJSON2 = rescheme(original2, new_scheme2);
 ]
 ```
 
-## Usage 3
+## Example 3
 ### (Tranformation of arrays of objects with nasted scheme)
 
 ```js
