@@ -4,7 +4,7 @@
   "description": "rescheme",
   "main": "index.js",
   "scripts": {
-    "test": "make test-all",
+    "test": "nodeunit test/*",
     "blanket": {
       "pattern": "//^((?!(node_modules|test)).)*$/",
       "data-cover-flags": {
@@ -17,6 +17,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "nodeunit": "*",
     "should": "*",
     "blanket": "*",
     "travis-cov": "*",
