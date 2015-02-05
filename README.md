@@ -4,7 +4,7 @@ Rescheme
 ![logo](https://raw.github.com/kolarski/rescheme/master/logo.png)
 
 
-JSON Rescheme project will help you change the JSON structure easily using declarative syntax. You just have to define your new JSON schema based on our current one, and let rescheme do the work for you. View the provided example.
+JSON Rescheme project will help you change the JSON structure easily using declarative syntax. You just have to define your new JSON schema based on our current one, and let rescheme do the work for you. Check the examples.
 
 ## Install
 
