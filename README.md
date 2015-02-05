@@ -12,7 +12,7 @@ JSON Rescheme project will help you change the JSON structure easily using decla
 $ npm install rescheme
 ```
 
-## Usage 1
+## Usage 1 (Simple object transormation with flat schema)
 
 ```js
 var rescheme = require('rescheme');
@@ -25,6 +25,7 @@ var original = {
 		details2: {
 			f: 4
 		}
+		we_dont_need_this: 5
 	}
 };
 
@@ -52,7 +53,7 @@ var reschemedJSON = rescheme(original, new_schema, options);
 }
 ```
 
-## Usage 2 (Working with arrays of objects)
+## Usage 2 (Tranformation of arrays of objects)
 
 ```js
 var original2 = [
@@ -79,12 +80,58 @@ var reschemedJSON2 = rescheme(original2, new_scheme2);
   { name: 5, city: 6, address: 7 } ]
 ```
 
+## Usage 3 (Tranformation of arrays of objects with recursive scheme)
+
+```js
+var original3 = [
+	{
+		a: 1, b: 2, c: { d: 3 }, g: 4
+	},
+	{
+		a: 5, b: 6, c: { d: 7, f: 8 }, d: { p: 9}
+	}
+];
+
+var new_scheme3 = {
+	name: "a",
+	details: {
+		city: "b",
+		more_details: {
+			address: "c.d"
+		}
+	}	
+};
+
+var reschemedJSON3 = rescheme(original3, new_scheme3);
+```
+
+### The result of above operation will be:
+```js
+[
+    {
+        "name":1,
+        "details":{
+            "city":2,
+            "more_details":{
+                "address":3
+            }
+        }
+    },
+    {
+        "name":5,
+        "details":{
+            "city":6,
+            "more_details":{
+                "address":7
+            }
+        }
+    }
+]
+```
+
 __Options__
 
 * `addMissingKeys` - true/false (default: false) - With this parameter all keys not defined in the new schema will be copied over from the original JSON. Not implemented.
-
-## Note
-This is still in beta. Currently works only with flat schema format as shown in example. I'm working on arrays and recursive schema formats. Any ideas and contributions will be greatly appreciated.
 
 ## Author
 Alex Kolarski (aleks.rk@gmail.com)

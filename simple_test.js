@@ -37,3 +37,26 @@ var new_scheme2 = {
 
 var reschemedJSON2 = rescheme(original2, new_scheme2);
 console.log(reschemedJSON2);
+
+
+var original3 = [
+	{
+		a: 1, b: 2, c: { d: 3 }, g: 4
+	},
+	{
+		a: 5, b: 6, c: { d: 7, f: 8 }, d: { p: 9}
+	}
+];
+
+var new_scheme3 = {
+	name: "a",
+	details: {
+		city: "b",
+		more_details: {
+				address: "c.d"
+		}
+	}	
+};
+
+var reschemedJSON3 = rescheme(original3, new_scheme3);
+console.log(JSON.stringify(reschemedJSON3));
