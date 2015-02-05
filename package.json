@@ -29,7 +29,7 @@
     "url": "git://github.com/kolarski/rescheme.git"
   },
   "keywords": [
-    "rescheme"
+    "json transform scheme rescheme"
   ],
   "engines": {
     "node": ">= 0.8.0"
