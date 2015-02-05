@@ -58,7 +58,7 @@ var reschemedJSON = rescheme(original, new_schema, options);
 ### (Tranformation of arrays of objects)
 
 ```js
-var original2 = [
+var original = [
 	{
 		a: 1, b: 2, c: { d: 3 }, g: 4
 	},
@@ -67,13 +67,13 @@ var original2 = [
 	}
 ];
 
-var new_scheme2 = {
+var new_scheme = {
 	name: "a",
 	city: "b",
 	address: "c.d"
 };
 
-var reschemedJSON2 = rescheme(original2, new_scheme2);
+var reschemedJSON = rescheme(original, new_scheme);
 ```
 
 ### The result of above operation will be:
@@ -96,7 +96,7 @@ var reschemedJSON2 = rescheme(original2, new_scheme2);
 ### (Tranformation of arrays of objects with nasted scheme)
 
 ```js
-var original3 = [
+var original = [
 	{
 		a: 1, b: 2, c: { d: 3 }, g: 4
 	},
@@ -105,7 +105,7 @@ var original3 = [
 	}
 ];
 
-var new_scheme3 = {
+var new_scheme = {
 	name: "a",
 	details: {
 		city: "b",
@@ -115,7 +115,7 @@ var new_scheme3 = {
 	}	
 };
 
-var reschemedJSON3 = rescheme(original3, new_scheme3);
+var reschemedJSON = rescheme(original, new_scheme);
 ```
 
 ### The result of above operation will be:
