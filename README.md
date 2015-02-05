@@ -46,10 +46,10 @@ var reschemedJSON = rescheme(original, new_schema, options);
 ### The result of above operation will be:
 ```js
 {
-	name: 1,
-	city: 2,
-	address: 3,
-	phone: 4
+	"name": 1,
+	"city": 2,
+	"address": 3,
+	"phone": 4
 }
 ```
 
@@ -76,8 +76,18 @@ var reschemedJSON2 = rescheme(original2, new_scheme2);
 
 ### The result of above operation will be:
 ```js
-[ { name: 1, city: 2, address: 3 },
-  { name: 5, city: 6, address: 7 } ]
+[
+    {
+        "name":1,
+        "city":2,
+        "address":3
+    },
+    {
+        "name":5,
+        "city":6,
+        "address":7
+    }
+]
 ```
 
 ## Usage 3 (Tranformation of arrays of objects with recursive scheme)
