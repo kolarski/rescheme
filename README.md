@@ -13,7 +13,7 @@ $ npm install rescheme
 ```
 
 ## Example 1
-### (Simple object transormation with flat schema)
+### (Simple object transformation with flat schema)
 
 ```js
 var rescheme = require('rescheme');
