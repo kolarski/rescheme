@@ -1,11 +1,13 @@
 Rescheme 
 =======
 
-<img align="left" src="https://raw.github.com/kolarski/rescheme/master/logo.png">
+<img align="left" src="https://raw.github.com/kolarski/rescheme/master/logo.png" />
 
-JSON Rescheme project will help you change the JSON structure easily using declarative syntax. You just have to define your new JSON schema based on your current JSON, and let rescheme do the work for you. Check the examples.
+JSON Rescheme project will help you change the JSON structure easily using declarative syntax. You just have to define your new JSON schema based on your current JSON, and let rescheme do the work for you.
 
-## Install
+Check out the examples.
+
+# Install
 
 ```bash
 $ npm install rescheme
