@@ -1,11 +1,11 @@
 {
   "name": "rescheme",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "rescheme",
   "main": "index.js",
   "scripts": {
     "test": "nodeunit test/*",
-   "coveralls": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov test | coveralls",
+    "coveralls": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov test | coveralls",
     "blanket": {
       "pattern": "//^((?!(node_modules|test)).)*$/",
       "data-cover-flags": {
@@ -31,7 +31,10 @@
     "url": "git://github.com/kolarski/rescheme.git"
   },
   "keywords": [
-    "json", "transform", "scheme", "rescheme"
+    "json",
+    "transform",
+    "scheme",
+    "rescheme"
   ],
   "engines": {
     "node": ">= 0.8.0"
