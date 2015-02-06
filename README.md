@@ -57,7 +57,7 @@ __The result of above operation will be:__
 ```
 
 ## Example 2
-__(Tranformation of arrays of objects)__
+__(Transformation of arrays of objects)__
 
 ```js
 var original = [
@@ -95,7 +95,7 @@ __The result of above operation will be:__
 ```
 
 ## Example 3
-__(Transformation of arrays of objects with nasted scheme)__
+__(Transformation of arrays of objects with nested scheme)__
 
 ```js
 var original = [
