@@ -1,5 +1,4 @@
-Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)
-[![Coverage Status](https://img.shields.io/coveralls/kolarski/rescheme.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme)
+Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)[![Coverage Status](https://img.shields.io/coveralls/kolarski/rescheme.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme)
 =======
 
 <img align="left" src="https://raw.github.com/kolarski/rescheme/master/logo.png">
