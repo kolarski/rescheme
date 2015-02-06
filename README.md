@@ -1,4 +1,4 @@
-Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)
+Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)  [![Coverage Status](https://coveralls.io/repos/kolarski/rescheme/badge.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme?branch=master)
 =======
 
 <img align="left" src="https://raw.github.com/kolarski/rescheme/master/logo.png">
@@ -15,7 +15,7 @@ $ npm install rescheme
 ```
 
 ## Example 1
-### (Simple object transformation with flat schema)
+__(Simple object transformation with flat schema)__
 
 ```js
 var rescheme = require('rescheme');
@@ -46,7 +46,7 @@ var options = {
 var reschemedJSON = rescheme(original, new_schema, options);
 ```
 
-### The result of above operation will be:
+__The result of above operation will be:__
 ```js
 {
 	"name": 1,
@@ -57,7 +57,7 @@ var reschemedJSON = rescheme(original, new_schema, options);
 ```
 
 ## Example 2
-### (Tranformation of arrays of objects)
+__(Tranformation of arrays of objects)__
 
 ```js
 var original = [
@@ -78,7 +78,7 @@ var new_scheme = {
 var reschemedJSON = rescheme(original, new_scheme);
 ```
 
-### The result of above operation will be:
+__The result of above operation will be:__
 ```js
 [
     {
@@ -95,7 +95,7 @@ var reschemedJSON = rescheme(original, new_scheme);
 ```
 
 ## Example 3
-### (Tranformation of arrays of objects with nasted scheme)
+__(Tranformation of arrays of objects with nasted scheme)__
 
 ```js
 var original = [
@@ -120,7 +120,7 @@ var new_scheme = {
 var reschemedJSON = rescheme(original, new_scheme);
 ```
 
-### The result of above operation will be:
+__The result of above operation will be:__
 ```js
 [
     {
