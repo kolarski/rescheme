@@ -95,7 +95,7 @@ __The result of above operation will be:__
 ```
 
 ## Example 3
-__(Tranformation of arrays of objects with nasted scheme)__
+__(Transformation of arrays of objects with nasted scheme)__
 
 ```js
 var original = [
