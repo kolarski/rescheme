@@ -1,4 +1,4 @@
-Rescheme  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)
+Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)
 =======
 
 <img align="left" src="https://raw.github.com/kolarski/rescheme/master/logo.png">
