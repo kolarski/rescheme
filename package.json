@@ -19,10 +19,9 @@
   "dependencies": {},
   "devDependencies": {
     "blanket": "*",
-    "coveralls": "^2.11.2",
-    "jscoverage": "^0.5.9",
+    "coveralls": "*",
+    "jscoverage": "*",
     "mocha": "*",
-    "mocha-lcov-reporter": "*",
     "nodeunit": "*",
     "should": "*",
     "travis-cov": "*"
