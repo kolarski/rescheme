@@ -105,6 +105,7 @@ exports.arrayGrouping = function(test) {
 	var original = {property1: 1, property2: 2};
 	var new_scheme = {  myfield: ["property1", "property2"] }
 	var reschemedJSON = rescheme(original, new_scheme);
+	test.ok(reschemedJSON.myfield.length == 2, 'Ensure the arrays are proper arrays and not objects');
 	test.deepEqual(reschemedJSON, {"myfield":[1, 2]}, 'Results match');
     test.done();
 };
