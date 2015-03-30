@@ -256,7 +256,7 @@ exports.startFromArray = function(test) {
         ];
     var new_scheme = {authors: "authors.name"};
     var reschemedJSON = rescheme(original, new_scheme);
-    test.ok(reschemedJSON.myflights.length == 2, 'Ensure the arrays are proper arrays and not objects');
+    // test.ok(reschemedJSON.authors.length == 2, 'Ensure the arrays are proper arrays and not objects');
     test.deepEqual(reschemedJSON, [ { authors: [ 'Alex', 'Bobi' ] }, { authors: [ 'Chris', 'Tihcho' ] } ], 'Results match');
     test.done();
 };
@@ -265,7 +265,7 @@ exports.startFromArray = function(test) {
 //     var original = require('./wizzair');
 //     // var original = require('./wizzair2');
 //     var new_scheme = {
-//         flights: "outboundLeg.days.$flat.flights.$flat"
+//         flights: "outboundLeg.days.$flat.flights.$flat.flightNum"
 //         // depTime: "outboundLeg.days.$flat.flights.$flat.localDepTime",
 //         // arrTime: "outboundLeg.days.$flat.flights.$flat.localArrTime",
 //         // price: "outboundLeg.days.$flat.flights.$flat.price",
@@ -276,3 +276,84 @@ exports.startFromArray = function(test) {
 //     test.deepEqual(reschemedJSON, [ { authors: [ 'Alex', 'Bobi' ] }, { authors: [ 'Chris', 'Tihcho' ] } ], 'Results match');
 //     test.done();
 // };
+
+
+
+exports.newDocFirst = function(test) {
+    var original = {
+        "book": {
+            "name": "JavaScript: The Good Parts",
+            "publisher": "O'Reilly Media",
+            "author": {
+                "name": "Douglas Crockford",
+                "website": "http://crockford.com"
+            },
+            "translations": ["English", "Spanish"]
+        }
+    };
+    var new_scheme = {
+        book_name: "book.name",
+        book_details: {
+            author_name: "book.author.name",
+            author_details: ["book.author.name", "book.author.website"],
+            contact: "book.author.website",
+            details: {
+                book_publisher: "book.publisher",
+                langs: "book.translations"
+            }
+        }
+    };
+    var reschemedJSON = rescheme(original, new_scheme);
+    // test.ok(reschemedJSON.myflights.length == 2, 'Ensure the arrays are proper arrays and not objects');
+    test.deepEqual(reschemedJSON, 
+    {
+        "book_name": "JavaScript: The Good Parts",
+        "book_details":{
+            "author_name": "Douglas Crockford",
+            "author_details": [ "Douglas Crockford", "http://crockford.com" ],
+            "contact": "http://crockford.com",
+            "details":{
+                "book_publisher": "O'Reilly Media",
+                "langs": [ "English", "Spanish" ]
+            }
+        }
+    }
+        , 'Results match');
+    test.done();
+};
+
+
+exports.newDocSecond = function(test) {
+    var original = [
+        {
+            "name": "JavaScript: The Good Parts",
+            "publisher": "O'Reilly Media",
+            "author": {
+                "name": "Douglas Crockford",
+                "website": "http://crockford.com"
+            },
+            "translations": ["English", "Spanish"]
+        },
+        {
+            "name": "JavaScript: The Definitive Guide",
+            "publisher": "O'Reilly Media",
+            "author": {
+                "name": "David Flanagan",
+                "website": "https://github.com/davidflanagan"
+            },
+            "translations": ["French", "English"]
+        }
+    ];
+    var new_scheme = {
+        name: "name",
+        author: "author.name"
+    };
+    var reschemedJSON = rescheme(original, new_scheme);
+    // test.ok(reschemedJSON.myflights.length == 2, 'Ensure the arrays are proper arrays and not objects');
+    test.deepEqual(reschemedJSON,[ { name: 'JavaScript: The Good Parts',
+    author: 'Douglas Crockford' },
+  { name: 'JavaScript: The Definitive Guide',
+    author: 'David Flanagan' } ], 'Results match');
+    test.done();
+};
+
