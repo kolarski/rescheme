@@ -305,8 +305,7 @@ exports.newDocFirst = function(test) {
     };
     var reschemedJSON = rescheme(original, new_scheme);
     // test.ok(reschemedJSON.myflights.length == 2, 'Ensure the arrays are proper arrays and not objects');
-    test.deepEqual(reschemedJSON, 
-    {
+    test.deepEqual(reschemedJSON, {
         "book_name": "JavaScript: The Good Parts",
         "book_details":{
             "author_name": "Douglas Crockford",
@@ -317,8 +316,7 @@ exports.newDocFirst = function(test) {
                 "langs": [ "English", "Spanish" ]
             }
         }
-    }
-        , 'Results match');
+    }, 'Results match');
     test.done();
 };
 
