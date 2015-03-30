@@ -1,0 +1,69 @@
+{
+	"outboundLeg": [
+		{
+			"monthDate":"2015-03-01",
+			"shortMonthName":"Mar",
+			"cheapestPrice":115.287,
+			"days":[
+				{
+					"date":"2015-03-01",
+					"dayInitial":"S",
+					"flights":[null],
+					"filterPrices":[0.0,0.0,0.0]
+				},
+				{
+					"date":"2015-03-02",
+					"dayInitial":"M",
+					"flights":[null],
+					"filterPrices":[0.0,0.0,0.0]
+				}
+			]
+		},
+		{
+			"monthDate": "2015-04-01",
+			"shortMonthName": "Apr",
+			"cheapestPrice": 41.098,
+			"days":[
+				{
+					"date":"2015-04-01",
+					"dayInitial":"W",
+					"flights":[
+						null,
+						null,
+						null,
+						{
+							"id":4554744,
+							"flightNum":1575,
+							"localDepTime":"2015-04-01T15:31",
+							"localArrTime":"2015-04-01T18:16",
+							"isSoldOut":true,
+							"isApprox":false,
+							"price":0.1
+						},
+						null,
+						null,
+						{
+							"id":4554743,
+							"flightNum":1574,
+							"localDepTime":"2015-04-01T15:30",
+							"localArrTime":"2015-04-01T18:15",
+							"isSoldOut":true,
+							"isApprox":false,
+							"price":0.0
+						},
+						null,
+						null,
+						null
+					],
+					"filterPrices":[0.0,0.0,0.0]
+				},
+				{
+					"date":"2015-04-02",
+					"dayInitial":"T",
+					"flights":[null],
+					"filterPrices":[0.0,0.0,0.0]
+				}
+			]
+		}
+	]
+}
