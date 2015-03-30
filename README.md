@@ -1,10 +1,7 @@
-Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)  [![Coverage Status](https://coveralls.io/repos/kolarski/rescheme/badge.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme?branch=master) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kolarski/rescheme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+<img src="https://raw.github.com/kolarski/rescheme/master/logo.png"> Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)  [![Coverage Status](https://coveralls.io/repos/kolarski/rescheme/badge.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme?branch=master) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kolarski/rescheme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 =======
 
-<img align="left" src="https://raw.github.com/kolarski/rescheme/master/logo.png">
-
 JSON Rescheme project will help you change the JSON structure easily using declarative syntax.
-
 # Install
 
 ```bash
@@ -26,14 +23,14 @@ var output_json = rescheme(original_json, scheme_json);
 We will use this JSON: 
 ```js
 {
-    "book":  {
-        "name": "JavaScript: The Good Parts",
-        "publisher": "O'Reilly Media",
-        "author": {
-            "name": "Douglas Crockford",
-            "website": "http://crockford.com"
+    book:  {
+        name: "JavaScript: The Good Parts",
+        publisher: "O'Reilly Media",
+        author: {
+            name: "Douglas Crockford",
+            website: "http://crockford.com"
         },
-        "translations": ["English", "Spanish"]
+        translations: ["English", "Spanish"]
     }
 }
 ```
@@ -63,14 +60,14 @@ Note that:
 The result will be : 
 ```js
 {
-    "book_name": "JavaScript: The Good Parts",
-    "book_details":{
-        "author_name": "Douglas Crockford",
-        "author_details": [ "Douglas Crockford", "http://crockford.com" ],
-        "contact": "http://crockford.com",
-        "details":{
-            "book_publisher": "O'Reilly Media",
-            "langs": [ "English", "Spanish" ]
+    book_name: "JavaScript: The Good Parts",
+    book_details:{
+        author_name: "Douglas Crockford",
+        author_details: [ "Douglas Crockford", "http://crockford.com" ],
+        contact: "http://crockford.com",
+        details:{
+            book_publisher: "O'Reilly Media",
+            langs: [ "English", "Spanish" ]
         }
     }
 }
@@ -82,22 +79,22 @@ The result will be :
 ```js
 [
     {
-        "name": "JavaScript: The Good Parts",
-        "publisher": "O'Reilly Media",
-        "author": {
-            "name": "Douglas Crockford",
-            "website": "http://crockford.com"
+        name: "JavaScript: The Good Parts",
+        publisher: "O'Reilly Media",
+        author: {
+            name: "Douglas Crockford",
+            website: "http://crockford.com"
         },
-        "translations": ["English", "Spanish"]
+        translations: ["English", "Spanish"]
     },
     {
-        "name": "JavaScript: The Definitive Guide",
-        "publisher": "O'Reilly Media",
-        "author": {
-            "name": "David Flanagan",
-            "website": "https://github.com/davidflanagan"
+        name: "JavaScript: The Definitive Guide",
+        publisher: "O'Reilly Media",
+        author: {
+            name: "David Flanagan",
+            website: "https://github.com/davidflanagan"
         },
-        "translations": ["French", "English"]
+        translations: ["French", "English"]
     }
 ]
 ```
@@ -106,8 +103,8 @@ As as scheme we want to get a list of only a book name and a author. Our scheme 
 
 ```js
 {
-    "name": "name",
-    "author": "author.name"
+    name: "name",
+    author: "author.name"
 }
 ```
 As a result we will get: 
