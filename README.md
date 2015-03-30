@@ -1,26 +1,28 @@
-<img src="https://raw.github.com/kolarski/rescheme/master/logo.png"> Rescheme
-[![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)  [![Coverage Status](https://coveralls.io/repos/kolarski/rescheme/badge.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme?branch=master) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kolarski/rescheme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+<img src="https://raw.github.com/kolarski/rescheme/master/logo.png"> Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)  [![Coverage Status](https://coveralls.io/repos/kolarski/rescheme/badge.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme?branch=master)
 =======
 
-JSON Rescheme project will help you change the JSON structure easily using declarative syntax.
+JSON Rescheme project will help you change any JSON structure using declarative syntax.
+
 # Install
 
 ```bash
 $ npm install rescheme --save
 ```
-# How it works ? 
-
-1. Give it a JSON `original_json`
-2. Define in what scheme you want your data back extracted from the original JSON `scheme_json`
-3. Get new JSON in your defined scheme `output_json`
 
 # Usage
 ```js
 var rescheme = require('rescheme');
 var output_json = rescheme(original_json, scheme_json);
 ```
-## Lets see some examples
-### Example 1
+
+# How it works ? 
+
+1. Give it a JSON `original_json`
+2. Define in what scheme you want your data back extracted from the original JSON `scheme_json`
+3. Get new JSON in your defined scheme `output_json`
+
+
+# Lets see some examples
 We will use this JSON: 
 ```js
 {
@@ -36,7 +38,7 @@ We will use this JSON:
 }
 ```
 
-Then we can make ourselfs a new schema from this JSON to suit our needs. Here is one example schema we can build: 
+Here is one example schema we can build: 
 ```js
 {
     book_name: "book.name",
@@ -51,13 +53,6 @@ Then we can make ourselfs a new schema from this JSON to suit our needs. Here is
     }
 }
 ```
-
-Note that:
-
-1. We define all the keys in our scheme (for example `book_name`)
-2. We define the our new structure: (for example `book_details` as object and `author_details` as array)
-3. The values for each key is the information we want to extract and replace from our original JSON (for example `"book.name"`)
-
 
 The result will be : 
 ```js
@@ -74,6 +69,13 @@ The result will be :
     }
 }
 ```
+
+
+Note that:
+
+1. We define all the keys in our scheme (for example `book_name`)
+2. We define the our new structure: (for example `book_details` as object and `author_details` as array)
+3. The values for each key is the information we want to extract and replace from our original JSON (for example `"book.name"`)
 
 ## How about arrays ?
 ### Here is the previous JSON, but this time we have 2 books in array
@@ -101,7 +103,7 @@ The result will be :
 ]
 ```
 
-As as scheme we want to get a list of only a book name and a author. Our scheme is pretty simple:
+Our scheme is pretty simple:
 
 ```js
 {
@@ -109,7 +111,7 @@ As as scheme we want to get a list of only a book name and a author. Our scheme 
     author: "author.name"
 }
 ```
-As a result we will get: 
+The result will be: 
 ```js
 [
     {
