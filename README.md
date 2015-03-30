@@ -3,150 +3,126 @@ Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://
 
 <img align="left" src="https://raw.github.com/kolarski/rescheme/master/logo.png">
 
-JSON Rescheme project will help you change the JSON structure easily using declarative syntax. You just have to define your new JSON schema based on your current JSON, and let rescheme do the work for you.
-
-Check the examples.
-
+JSON Rescheme project will help you change the JSON structure easily using declarative syntax.
 
 # Install
 
 ```bash
 $ npm install rescheme
 ```
+# How it works ? 
 
-## Example 1
-__(Simple object transformation with flat schema)__
+1. Give it a JSON `original_json`
+2. Define in what scheme you want your data back extracted from the original JSON `scheme_json`
+3. Get new JSON in your defined scheme `output_json`
 
+# Usage
 ```js
 var rescheme = require('rescheme');
-
-var original = {
-	a: 1,
-	details1: {
-		c: 2,
-		d: 3,
-		details2: {
-			f: 4
-		}
-		we_dont_need_this: 5
-	}
-};
-
-var new_scheme = {
-	name: "a",
-	city: "details1.c",
-	address: "details1.d",
-	phone: "details1.details2.f"
-}
-
-var options = {
-	addMissingKeys: false
-};
-
-var reschemedJSON = rescheme(original, new_schema, options);
+var output_json = rescheme(original_json, scheme_json);
 ```
-
-__The result of above operation will be:__
+## Lets see some examples
+### Example 1
+We will use this JSON: 
 ```js
 {
-	"name": 1,
-	"city": 2,
-	"address": 3,
-	"phone": 4
+    "book":  {
+        "name": "JavaScript: The Good Parts",
+        "publisher": "O'Reilly Media",
+        "author": {
+            "name": "Douglas Crockford",
+            "website": "http://crockford.com"
+        },
+        "translations": ["English", "Spanish"]
+    }
 }
 ```
 
-## Example 2
-__(Transformation of arrays of objects)__
-
+Then we can make ourselfs a new schema from this JSON to suit our needs. Here is one example schema we can build: 
 ```js
-var original = [
-	{
-		a: 1, b: 2, c: { d: 3 }, g: 4
-	},
-	{
-		a: 5, b: 6, c: { d: 7, f: 8 }, d: { p: 9}
-	}
-];
-
-var new_scheme = {
-	name: "a",
-	city: "b",
-	address: "c.d"
-};
-
-var reschemedJSON = rescheme(original, new_scheme);
+{
+    book_name: "book.name",
+    book_details: {
+        author_name: "book.author.name",
+        author_details: ["book.author.name", "book.author.website"],
+        contact: "book.author.website",
+        details: {
+            book_publisher: "book.publisher",
+            langs: "book.translations"
+        }
+    }
+}
 ```
 
-__The result of above operation will be:__
+Note that: 
+1. We define all the keys in our scheme (for example `book_name`)
+2. We define the our new structure: (for example `book_details` as object and `author_details` as array)
+3. The values for each key is the information we want to extract and replace from our original JSON (for example `"book.name"`)
+
+
+The result will be : 
+```js
+{
+    "book_name": "JavaScript: The Good Parts",
+    "book_details":{
+        "author_name": "Douglas Crockford",
+        "author_details": [ "Douglas Crockford", "http://crockford.com" ],
+        "contact": "http://crockford.com",
+        "details":{
+            "book_publisher": "O'Reilly Media",
+            "langs": [ "English", "Spanish" ]
+        }
+    }
+}
+```
+
+## How about arrays ?
+### Here is the previous JSON, but this time we have 2 books in array
+
 ```js
 [
     {
-        "name":1,
-        "city":2,
-        "address":3
+        "name": "JavaScript: The Good Parts",
+        "publisher": "O'Reilly Media",
+        "author": {
+            "name": "Douglas Crockford",
+            "website": "http://crockford.com"
+        },
+        "translations": ["English", "Spanish"]
     },
     {
-        "name":5,
-        "city":6,
-        "address":7
+        "name": "JavaScript: The Definitive Guide",
+        "publisher": "O'Reilly Media",
+        "author": {
+            "name": "David Flanagan",
+            "website": "https://github.com/davidflanagan"
+        },
+        "translations": ["French", "English"]
     }
 ]
 ```
 
-## Example 3
-__(Transformation of arrays of objects with nested scheme)__
+As as scheme we want to get a list of only a book name and a author. Our scheme is pretty simple:
 
 ```js
-var original = [
-	{
-		a: 1, b: 2, c: { d: 3 }, g: 4
-	},
-	{
-		a: 5, b: 6, c: { d: 7, f: 8 }, d: { p: 9}
-	}
-];
-
-var new_scheme = {
-	name: "a",
-	details: {
-		city: "b",
-		more_details: {
-			address: "c.d"
-		}
-	}	
-};
-
-var reschemedJSON = rescheme(original, new_scheme);
+{
+    "name": "name",
+    "author": "author.name"
+}
 ```
-
-__The result of above operation will be:__
+As a result we will get: 
 ```js
 [
     {
-        "name":1,
-        "details":{
-            "city":2,
-            "more_details":{
-                "address":3
-            }
-        }
+        name: 'JavaScript: The Good Parts',
+        author: 'Douglas Crockford'
     },
     {
-        "name":5,
-        "details":{
-            "city":6,
-            "more_details":{
-                "address":7
-            }
-        }
+        name: 'JavaScript: The Definitive Guide',
+        author: 'David Flanagan'
     }
 ]
 ```
-
-__Options__
-
-* `addMissingKeys` - true/false (default: false) - With this parameter all keys not defined in the new schema will be copied over from the original JSON. Not implemented.
 
 ## Author
 Alex Kolarski (aleks.rk@gmail.com)
