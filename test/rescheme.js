@@ -109,3 +109,24 @@ exports.arrayGrouping = function(test) {
 	test.deepEqual(reschemedJSON, {"myfield":[1, 2]}, 'Results match');
     test.done();
 };
+
+exports.extractFromArrays = function(test) {
+	var original = {
+	"days": {
+        "flights": [
+          	null,
+          	{
+            	"a": 2
+          	},
+          	{
+            	"a": 3
+          	}
+        ]
+   }
+};
+	var new_scheme = {myflights: "days.flights.$each.a"};
+	var reschemedJSON = rescheme(original, new_scheme);
+	test.ok(reschemedJSON.myflights.length == 2, 'Ensure the arrays are proper arrays and not objects');
+	test.deepEqual(reschemedJSON, {"myflights":[2,3]}, 'Results match');
+    test.done();
+};
