@@ -1,11 +1,12 @@
-<img src="https://raw.github.com/kolarski/rescheme/master/logo.png"> Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)  [![Coverage Status](https://coveralls.io/repos/kolarski/rescheme/badge.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme?branch=master) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kolarski/rescheme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+<img src="https://raw.github.com/kolarski/rescheme/master/logo.png"> Rescheme
+[![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)  [![Coverage Status](https://coveralls.io/repos/kolarski/rescheme/badge.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme?branch=master) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kolarski/rescheme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 =======
 
 JSON Rescheme project will help you change the JSON structure easily using declarative syntax.
 # Install
 
 ```bash
-$ npm install rescheme
+$ npm install rescheme --save
 ```
 # How it works ? 
 
@@ -51,7 +52,8 @@ Then we can make ourselfs a new schema from this JSON to suit our needs. Here is
 }
 ```
 
-Note that: 
+Note that:
+
 1. We define all the keys in our scheme (for example `book_name`)
 2. We define the our new structure: (for example `book_details` as object and `author_details` as array)
 3. The values for each key is the information we want to extract and replace from our original JSON (for example `"book.name"`)
