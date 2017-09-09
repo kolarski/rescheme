@@ -1,4 +1,4 @@
-<img src="https://raw.github.com/kolarski/rescheme/master/logo.png"> Rescheme [![Build Status](https://travis-ci.org/kolarski/rescheme.svg)](https://travis-ci.org/kolarski/rescheme)  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)  [![Coverage Status](https://coveralls.io/repos/kolarski/rescheme/badge.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme?branch=master)
+<img src="https://raw.github.com/kolarski/rescheme/master/logo.png"> Rescheme  [![npm version](https://badge.fury.io/js/rescheme.svg)](http://badge.fury.io/js/rescheme)  [![Coverage Status](https://coveralls.io/repos/kolarski/rescheme/badge.svg?branch=master)](https://coveralls.io/r/kolarski/rescheme?branch=master)
 =======
 
 JSON Rescheme project will help you change any JSON structure using declarative syntax.
